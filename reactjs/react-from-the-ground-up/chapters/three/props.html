@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>React tutorial</title>
+    <script src="https://fb.me/react-0.14.7.js"></script>
+	<script src="https://fb.me/react-dom-0.14.7.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.2/browser.min.js"></script>
+</head>
+<body>
+	<div id="app"></div>
+
+	<script type="text/babel">
+		var PropsComponent = React.createClass({
+			propTypes: {
+				name: React.PropTypes.string.isRequired,
+				age: React.PropTypes.string.isRequired
+			},
+			getDefaultProps: function() {
+				return {
+					name: 'Default name',
+					age: '99'
+				}
+			},
+			render: function() {
+				let name = this.props.name;
+				let age = this.props.age;
+				return (
+					<div>
+						<p>Name: {name}</p>
+						<p>Age: {age}</p>
+					</div>
+				)
+			}
+		});
+
+		ReactDOM.render(
+			<PropsComponent name="Baldi" age='20' />,
+			document.getElementById('app')
+		);
+	</script>
+</body>
+</html>

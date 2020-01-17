@@ -1,0 +1,27 @@
+body {
+  text-align: center;
+}
+
+.app-header {
+  background-color: #282c34;
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2em;
+  color: white;
+}
+
+.app-header a {
+  color: #61dafb;
+  margin: 0 8px;
+  text-decoration: none;
+}
+
+.content {
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

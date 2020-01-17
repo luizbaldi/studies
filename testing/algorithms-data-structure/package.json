@@ -1,0 +1,30 @@
+{
+  "name": "algorithms-data-structure",
+  "version": "0.1.0",
+  "description": "Simple folder to organize exercises from course",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha test/*.spec.js --require babel-register",
+    "test:watch": "mocha test/*.spec.js --require babel-register --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luizbaldi/javascript-tdd.git"
+  },
+  "author": "Luiz Baldi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luizbaldi/javascript-tdd/issues"
+  },
+  "homepage": "https://github.com/luizbaldi/javascript-tdd#readme",
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-register": "^6.26.0",
+    "chai": "^4.1.2",
+    "mocha": "^4.0.1"
+  }
+}

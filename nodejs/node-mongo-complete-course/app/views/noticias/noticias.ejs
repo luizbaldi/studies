@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+	<html lang="pt-br">
+		<head>
+			<meta charset="utf-8"/>
+			<title>Noticias</title>
+		</head>
+	<body>
+
+		<h1>Noticias</h1>
+
+		<table>
+			<tr>
+				<td>Id</td>
+				<td>Titulo</td>
+				<td>Noticia</td>
+			</tr>
+
+			<!-- This doesn't accepts ES6 syntax :( -->
+			<% for(let i = 0; i < news.length; i++) { %>
+				<tr>
+					<td><%= news[i].id_new %></td>
+					<td><%= news[i].title %></td>
+					<td><%= news[i].new %></td>
+				</tr>
+			<% } %>
+		</table>
+	</body>
+</html>
