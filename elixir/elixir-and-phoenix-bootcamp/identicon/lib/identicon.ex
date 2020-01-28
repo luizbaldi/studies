@@ -73,4 +73,8 @@ defmodule Identicon do
   def save_image(image, input) do
     File.write("#{input}.png", image)
   end
+
+  def sup(lol \\ "opaaa") do
+    lol
+  end
 end
