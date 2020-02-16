@@ -4,12 +4,10 @@ defmodule Discuss.Topic do
 
   schema "topics" do
     field :title, :string
-
-    timestamps()
   end
 
   @doc false
-  def changeset(topic, attrs) do
+  def changeset(topic, attrs \\ %{}) do
     topic
     |> cast(attrs, [:title])
     |> validate_required([:title])
