@@ -16,6 +16,7 @@ defmodule Rumbl.Accounts.User do
     |> cast(attrs, [:name, :username])
     |> validate_required([:name, :username])
     |> validate_length(:username, min: 1, max: 20)
+    |> unique_constraint(:username, [message: "Username has already been taken"])
   end
 
   def registration_changeset(user, attrs) do

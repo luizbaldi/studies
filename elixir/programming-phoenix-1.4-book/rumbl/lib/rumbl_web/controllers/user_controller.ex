@@ -31,6 +31,7 @@ defmodule RumblWeb.UserController do
         |> redirect(to: Routes.user_path(conn, :index))
 
       {:error, %Ecto.Changeset{} = changeset} ->
+        IO.inspect changeset
         render(conn, "new.html", changeset: changeset)
     end
   end
