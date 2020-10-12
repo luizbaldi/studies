@@ -7,7 +7,7 @@ defmodule Rumbl.Multimedia do
   alias Rumbl.Repo
   alias Ecto.Changeset
 
-  alias Rumbl.Multimedia.{Video,Category}
+  alias Rumbl.Multimedia.{Video, Category}
   alias Rumbl.Accounts.User
 
   @doc """
@@ -115,7 +115,7 @@ defmodule Rumbl.Multimedia do
   def list_user_videos(%User{} = user) do
     user
     |> user_videos_query
-    |> Repo.all
+    |> Repo.all()
   end
 
   def get_user_video!(%User{} = user, id) do
@@ -130,7 +130,7 @@ defmodule Rumbl.Multimedia do
 
   def list_alphabetical_categories do
     Category
-    |> Category.alphabetical_query
-    |> Repo.all
+    |> Category.alphabetical_query()
+    |> Repo.all()
   end
 end
