@@ -2,7 +2,7 @@ defmodule Rumbl.Multimedia.Video do
   use Ecto.Schema
   import Ecto.Changeset
   alias Rumbl.Accounts.User
-  alias Rumbl.Multimedia.{Category, Permalink}
+  alias Rumbl.Multimedia.{Category, Permalink, Annotation}
 
   @primary_key {:id, Permalink, autogenerate: true}
 
@@ -14,6 +14,8 @@ defmodule Rumbl.Multimedia.Video do
 
     belongs_to :user, User
     belongs_to :category, Category
+
+    has_many :annotations, Annotation
 
     timestamps()
   end

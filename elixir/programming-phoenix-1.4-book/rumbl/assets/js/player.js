@@ -23,7 +23,9 @@ const Player = {
     });
   },
 
-  onPlayerStateChange(event) {},
+  onPlayerStateChange(event) {
+    console.log("onPlayerStateChange", event);
+  },
 
   getCurrentTime() {
     return Math.floor(this.player.getCurrentTime() * 1000);
