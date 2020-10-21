@@ -1,3 +1,4 @@
+import { Presence } from "phoenix";
 import Player from "./player";
 
 const escape = (content) => {
@@ -40,6 +41,18 @@ const Video = {
       last_seen_id: lastSeenId,
     }));
 
+    const presence = new Presence(vidChannel);
+    const userList = document.getElementById("user-list");
+
+    presence.onSync(() => {
+      userList.innerHTML = presence
+        .list(
+          (id, { metas: [first, ...rest], user }) =>
+            `<li>${user.username}: (${rest.length + 1})</li>`
+        )
+        .join("");
+    });
+
     vidChannel
       .join()
       .receive("ok", ({ annotations }) => {
@@ -47,6 +60,7 @@ const Video = {
 
         if (ids.length > 0) {
           lastSeenId = Math.max(...ids);
+          console.log({ lastSeenId });
         }
 
         this.scheduleMessages(msgContainer, annotations);
@@ -57,6 +71,7 @@ const Video = {
 
     vidChannel.on("new_annotation", ({ id, user, body, at }) => {
       lastSeenId = id;
+      console.log({ lastSeenId });
       this.renderAnnotation(msgContainer, { user, body, at });
     });
 
