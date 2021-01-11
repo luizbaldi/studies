@@ -1,0 +1,15 @@
+{
+  "name": "fundamentals-of-testing-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "assertion-library.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "node --require ./setup-globals.js ./assertion-library.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
