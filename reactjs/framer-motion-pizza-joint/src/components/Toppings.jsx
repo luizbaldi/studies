@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 const Toppings = ({ pizza, addTopping }) => {
@@ -17,9 +18,14 @@ const Toppings = ({ pizza, addTopping }) => {
         {toppings.map((topping) => {
           const spanClass = pizza.toppings.includes(topping) ? "active" : "";
           return (
-            <li key={topping} onClick={() => addTopping(topping)}>
+            <motion.li
+              key={topping}
+              onClick={() => addTopping(topping)}
+              whileHover={{ scale: 1.2, color: "#f8e112", originX: 0 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
               <span className={spanClass}>{topping}</span>
-            </li>
+            </motion.li>
           );
         })}
       </ul>
